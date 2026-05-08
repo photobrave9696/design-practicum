@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практикум для фрілансерів — лого і айдентика</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #492E33;
+            --color-bg: #F4F0CD;
+            --color-surface: #F5F5F0;
+            --color-accent: #C3E5FF;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-primary);
+            font-family: 'Inter', 'Manrope', system-ui, sans-serif;
+            letter-spacing: 0;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, .font-editorial, .section-heading, .big-number {
+            font-family: 'GaramondBookNarrowCTT', Georgia, serif;
+            letter-spacing: -0.03em;
+            line-height: 0.9;
+        }
+
+        .bg-primary { background-color: var(--color-primary); }
+        .bg-page { background-color: var(--color-bg); }
+        .bg-surface { background-color: var(--color-surface); }
+        .bg-accent { background-color: var(--color-accent); }
+        
+        .text-primary { color: var(--color-primary); }
+        .text-page { color: var(--color-bg); }
+
+        .border-primary { border-color: var(--color-primary); }
+
+        .text-h1 { font-size: 36px; }
+        .text-h2 { font-size: 28px; }
+        .text-h3 { font-size: 18px; }
+        .text-body { font-size: 15px; }
+        .text-small { font-size: 13px; }
+
+        @media (min-width: 768px) {
+            .text-h1 { font-size: 64px; }
+            .text-h2 { font-size: 40px; }
+            .text-h3 { font-size: 22px; }
+            .text-body { font-size: 16px; }
+        }
+        @media (min-width: 1280px) {
+            .text-h1 { font-size: 72px; }
+            .text-h2 { font-size: 48px; }
+            .text-h3 { font-size: 24px; }
+            .text-body { font-size: 18px; }
+            .text-small { font-size: 14px; }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-bg);
+        }
+        .btn-primary:hover { opacity: 0.9; }
+        .btn-inverted {
+            background-color: var(--color-bg);
+            color: var(--color-primary);
+        }
+        .btn-inverted:hover { opacity: 0.9; }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-scrolled {
+            box-shadow: 0 4px 20px rgba(73, 46, 51, 0.05);
+        }
+
+        /* Accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-in-out;
+        }
+        
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--color-primary);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#C3E5FF] selection:text-[#492E33]">
+
+    <nav id="navbar" class="sticky top-0 z-50 bg-page border-b border-primary transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-editorial text-2xl font-bold">Практикум</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#programa" class="text-body hover:opacity-70 transition-opacity">Програма</a>
+                    <a href="#tsina" class="text-body hover:opacity-70 transition-opacity">Ціна</a>
+                    <a href="#faq" class="text-body hover:opacity-70 transition-opacity">FAQ</a>
+                </div>
+                <div>
+                    <a href="https://t.me/valeriia_kravtsova_business" class="text-primary font-medium border-b border-primary pb-1 hover:opacity-70 transition-opacity md:hidden">Забронювати</a>
+                    <a href="https://t.me/valeriia_kravtsova_business" class="hidden md:inline-flex btn btn-primary py-3 px-6 text-sm">Забронювати місце →</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-page pt-16 pb-20 md:pt-24 md:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center fade-up">
+            <div class="inline-block bg-accent px-4 py-2 rounded-full border border-primary text-small mb-8">
+                Практикум для фрілансерів — лого і айдентика
+            </div>
+            <h1 class="text-h1 font-editorial mb-8 mx-auto max-w-4xl">
+                За 4 тижні отримай перевірену систему ведення дизайн-проєктів, яка мінімізує правки і допомагає називати ціну, яку хочеш
+            </h1>
+            <p class="text-h3 font-medium mb-12 max-w-3xl mx-auto">
+                Вийдеш із застрягання з актуальним кейсом із логотипу і розумінням, чому твоя робота коштує більше — і як це пояснити клієнту
+            </p>
+            
+            <div class="grid grid-cols-2 md:flex md:justify-center gap-2 md:gap-4 mb-12 text-small">
+                <div class="bg-primary text-page py-2 px-4">Старт 28.05</div>
+                <div class="bg-primary text-page py-2 px-4">4 тижні</div>
+                <div class="bg-primary text-page py-2 px-4">Симуляція реального проєкту</div>
+                <div class="bg-primary text-page py-2 px-4">30% запис · 70% практика</div>
+            </div>
+
+            <a href="https://t.me/valeriia_kravtsova_business" class="btn btn-primary w-full md:w-auto text-lg mb-4">Забронювати місце →</a>
+            <div class="text-small opacity-70">
+                <p>Early birds до 19.05 — 8 500 грн · є розтермінування</p>
+                <p>Після — 11 500 грн · є розтермінування</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="for-whom" class="bg-page py-20 md:py-32 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto fade-up">
+            <h2 class="text-h2 font-editorial mb-16">Це для тебе, якщо впізнаєш себе хоча б в одному</h2>
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-x-12 gap-y-16 mb-16">
+                <div class="flex flex-col">
+                    <span class="text-[64px] md:text-[80px] font-editorial text-primary leading-none mb-4">01</span>
+                    <p class="text-h3 font-bold mb-2">Є 1–3 роки в дизайні</p>
+                    <p class="text-body mb-4">але ціна досі як у новачка — і щоразу кажеш менше, ніж хочеш</p>
+                    <div class="flex gap-4 items-start text-primary opacity-80 mt-auto">
+                        <span class="mt-1">→</span>
+                        <p class="text-body italic">Скажеш ціну вголос перед групою. Розберемо що відбувається всередині і як на це реагувати.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-[64px] md:text-[80px] font-editorial text-primary leading-none mb-4">02</span>
+                    <p class="text-h3 font-bold mb-2">Клієнт скинув референси і сказав «окей»</p>
+                    <p class="text-body mb-4">але потім виявилось «не те мав на увазі» — і тривожно переробляєш</p>
+                    <div class="flex gap-4 items-start text-primary opacity-80 mt-auto">
+                        <span class="mt-1">→</span>
+                        <p class="text-body italic">Отримаєш систему, яка мінімізує правки.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-[64px] md:text-[80px] font-editorial text-primary leading-none mb-4">03</span>
+                    <p class="text-h3 font-bold mb-2">Є роботи</p>
+                    <p class="text-body mb-4">але показувати соромно — або не той рівень, або просто картинки</p>
+                    <div class="flex gap-4 items-start text-primary opacity-80 mt-auto">
+                        <span class="mt-1">→</span>
+                        <p class="text-body italic">Складеш кейс за формулою, яка розкриває твій підхід до проєкту. Публікуєш в Instagram одразу після.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-[64px] md:text-[80px] font-editorial text-primary leading-none mb-4">04</span>
+                    <p class="text-h3 font-bold mb-2">Є 3 роки досвіду</p>
+                    <p class="text-body mb-4">але сумніваєшся і йдеш на базовий курс «підтягнути базу» — хоча проблема не в техніці</p>
+                    <div class="flex gap-4 items-start text-primary opacity-80 mt-auto">
+                        <span class="mt-1">→</span>
+                        <p class="text-body italic">Пройдеш повний цикл проєкту і зрозумієш де саме в процесі губиться впевненість — і що з цим робити.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col xl:col-span-2 xl:w-1/2">
+                    <span class="text-[64px] md:text-[80px] font-editorial text-primary leading-none mb-4">05</span>
+                    <p class="text-h3 font-bold mb-2">Скидаю PDF мовчки</p>
+                    <p class="text-body mb-4">бо захищати концепт вживу страшно — а раптом «не підходить»</p>
+                    <div class="flex gap-4 items-start text-primary opacity-80 mt-auto">
+                        <span class="mt-1">→</span>
+                        <p class="text-body italic">Захистиш рішення перед клієнтом, де можна помилитись і одразу розібрати чому.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="https://t.me/valeriia_kravtsova_business" class="btn btn-primary w-full md:w-auto mb-6">Забронювати місце →</a>
+                <p class="text-small opacity-70 max-w-2xl mx-auto">Не для тебе, якщо ти тільки починаєш і ще не було жодного клієнта — цей формат поки зарано. Напиши мені — порекомендую під твій запит.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-surface py-20 md:py-32 px-4 sm:px-6 lg:px-8 border-y border-primary">
+        <div class="max-w-5xl mx-auto fade-up">
+            <h2 class="text-h2 font-editorial mb-12">Чому тобі не потрібен ще один базовий курс?</h2>
+            <ol class="list-decimal list-inside text-body space-y-4 mb-12 max-w-3xl">
+                <li>Ти вже проходила хоча б один курс по лого або графічному дизайну?</li>
+                <li>У тебе був хоча б один реальний клієнт на лого чи айдентику?</li>
+                <li>Ти хочеш підняти ціну — але не знаєш як пояснити клієнту, чому саме стільки?</li>
+                <li>Клієнт хоча б раз казав «не те мав на увазі» — і ти переробляла?</li>
+                <li>Є відчуття, що застрягла на одному рівні, хоча досвід вже є?</li>
+                <li>Маєш позитивні фідбеки від клієнтів у роботі?</li>
+            </ol>
+
+            <div class="bg-accent p-6 md:p-8 mb-16 border border-primary text-body">
+                <p class="font-bold mb-2">Якщо 2 і більше «так»:</p>
+                <p>Проблема не в базі. Ти вже її знаєш — і клієнти це підтверджують. Проблема в тому, що немає системи ведення проєкту, і через це ти не бачиш свого реального впливу на бізнес клієнта і занижуєш ціну. Ще один базовий курс це не виправить.</p>
+            </div>
+
+            <div class="text-body space-y-4 mb-20 max-w-3xl">
+                <p>Ось чому з'явився цей практикум.</p>
+                <p>Десь через 1,5 роки роботи з клієнтами я пішла на базовий курс зі створення лого. Відчувала — наче мені чогось не вистачає. Наче треба «підтягнути базу». Заплатила гроші — і зрозуміла, що я це вже знаю.</p>
+                <p>Ми ховаємось за «покращити базу», бо відчуваємо себе недостатніми спеціалістами. Але часто це просто наші думки — і потрібен не ще один курс, а новий досвід. Тому цей практикум побудований на рольовій грі та симуляції процесу. Щоб отримати не теоретичні знання, а досвід їх використання. Щоб десь зафакапити, але безпечно — і вже не боятись цього з реальними клієнтами.</p>
+            </div>
+
+            <h3 class="text-h3 font-editorial mb-8">Програма не розтягнута на місяці, щоб ти її реально пройшла</h3>
+            <div class="flex flex-col mb-8">
+                <div class="grid grid-cols-2 gap-4 pb-4 border-b border-primary border-opacity-20 text-small uppercase tracking-wide">
+                    <div class="opacity-60">Базовий курс по лого</div>
+                    <div class="font-bold">Цей практикум</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-6 border-b border-primary border-opacity-20 text-body">
+                    <div class="opacity-60 pr-4">Вчишся інструментам створення лого</div>
+                    <div class="font-medium">Отримуєш систему роботи з проєктом — від задачі бізнесу до кейсу</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-6 border-b border-primary border-opacity-20 text-body">
+                    <div class="opacity-60 pr-4">Ти сам собі клієнт</div>
+                    <div class="font-medium">Твоїм клієнтом є колега — симуляція реального замовника і досвід з іншого боку</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-6 border-b border-primary border-opacity-20 text-body">
+                    <div class="opacity-60 pr-4">Фідбек по дизайну</div>
+                    <div class="font-medium">Фідбек по брифінгу, комунікації і твоїх сильних проявах як експерта</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-6 border-b border-primary border-opacity-20 text-body">
+                    <div class="opacity-60 pr-4">Формат: ти і куратор</div>
+                    <div class="font-medium">Груповий формат з різними ролями</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-6 border-b border-primary border-opacity-20 text-body">
+                    <div class="opacity-60 pr-4">Більше уроків в записі</div>
+                    <div class="font-medium">70% практики і живих зустрічей</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-6 border-b border-primary border-opacity-20 text-body">
+                    <div class="opacity-60 pr-4">Акцент на дизайн</div>
+                    <div class="font-medium">Акцент на hard + soft скілах, які впливають на чек і повторні звернення</div>
+                </div>
+            </div>
+            <a href="https://t.me/valeriia_kravtsova_business" class="text-small font-medium border-b border-primary pb-0.5 hover:opacity-70 transition-opacity">Сумніваєшся? Напиши мені — розберемось разом.</a>
+        </div>
+    </section>
+
+    <section id="programa" class="bg-page py-20 md:py-32 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto fade-up">
+            <h2 class="text-h2 font-editorial mb-6">Що відбувається за 4 тижні</h2>
+            <p class="text-body italic opacity-80 mb-16 max-w-2xl">Кожен тиждень — це крок реального проєкту. Hard і soft skills йдуть паралельно.</p>
+            
+            <div class="relative timeline-line pl-6 md:pl-10 space-y-16">
+                <div class="relative">
+                    <p class="text-small opacity-60 mb-2">Week 0 · 28 травня – 2 червня</p>
+                    <h3 class="text-h2 font-editorial mb-6">Онбординг</h3>
+                    <ul class="list-none text-body space-y-3 mb-6">
+                        <li>— Відео-онбординг: як влаштований практикум, яка система і що навіщо</li>
+                        <li>— Знайомишся з групою в ТГ-чаті — пишеш хто ти і яка твоя бізнес-мрія</li>
+                        <li>— Zoom-знайомство 28 травня <span class="inline-block border border-primary px-2 py-0.5 text-[11px] uppercase tracking-wider ml-2">групове</span></li>
+                    </ul>
+                    <p class="text-body mb-4 ml-4 border-l border-primary pl-4 opacity-90"><span class="font-bold">+ Бонус:</span> «Феномен самозванця — як він впливає на ціну і що з цим робити» </p>
+                    <div class="bg-accent p-4 border border-primary text-body">
+                        <span class="font-bold">Результат:</span> входиш у тиждень 1 вже з іншим поглядом на себе і на те, чому ти досі береш менше ніж хочеш
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <p class="text-small opacity-60 mb-2">Week 1 · 2–9 червня</p>
+                    <h3 class="text-h2 font-editorial mb-6">Залізти в голову до клієнта</h3>
+                    <ul class="list-none text-body space-y-3 mb-6">
+                        <li>— Повний цикл роботи з лого та айдентикою — структура проєкту від і до</li>
+                        <li>— Просунутий брифінг і візуальна сесія — як вести крок за кроком</li>
+                        <li>— Робочий шаблон візуальної сесії, відпрацьований на реальних проєктах</li>
+                        <li>— Підбірка інструментів для підготовки до сесії</li>
+                        <li>— Проводиш візуальну сесію</li>
+                        <li>— Отримуєш фідбек від авторки практикуму по структурі проведення</li>
+                    </ul>
+                    <p class="text-body mb-4 ml-4 border-l border-primary pl-4 opacity-90"><span class="font-bold">+ Бонуси:</span> «Як не застрягти на підбірці рефів» і «Як формувати ціну — мій погляд без формул»</p>
+                    <div class="bg-accent p-4 border border-primary text-body">
+                        <span class="font-bold">Результат:</span> відчуваєш різницю між «взяти завдання» і «вести клієнта до його власного рішення» — це вже партнерство, а не робота ручками по ТЗ
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <p class="text-small opacity-60 mb-2">Week 2 · 10–15 червня</p>
+                    <h3 class="text-h2 font-editorial mb-6">Створення концепту</h3>
+                    <ul class="list-none text-body space-y-3 mb-6">
+                        <li>— Цілий тиждень на дизайн — без нових відео і завдань</li>
+                        <li>— Підготовка до презентації: структура PDF, логіка подачі рішення</li>
+                        <li>— Готовий логотип + PDF-презентація концепту</li>
+                    </ul>
+                    <p class="text-body mb-4 ml-4 border-l border-primary pl-4 opacity-90"><span class="font-bold">+ Бонуси:</span> «Як використати ШІ на етапі створення концепту» і розбір реального кейсу Валерії зсередини</p>
+                    <div class="bg-accent p-4 border border-primary text-body">
+                        <span class="font-bold">Результат:</span> виходиш на презентацію з роботою, яку сама вважаєш сильною — і це безпосередньо впливає на те, як ти продаєш її клієнту
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <p class="text-small opacity-60 mb-2">Week 3 · 16–22 червня</p>
+                    <h3 class="text-h2 font-editorial mb-6">Закохати клієнта в рішення</h3>
+                    <ul class="list-none text-body space-y-3 mb-6">
+                        <li>— Формати презентації і як це роблю я — живі приклади підходу</li>
+                        <li>— Презентація концепту <span class="inline-block border border-primary px-2 py-0.5 text-[11px] uppercase tracking-wider ml-2">в парі</span></li>
+                        <li>— Отримуєш фідбек від авторки практикуму по сильних проявах і твоїх фішках як дизайнера</li>
+                    </ul>
+                    <p class="text-body mb-4 ml-4 border-l border-primary pl-4 opacity-90"><span class="font-bold">+ Секретний Бонус</span></p>
+                    <div class="bg-accent p-4 border border-primary text-body">
+                        <span class="font-bold">Результат:</span> починаєш бачити свій стиль і свої фішки через конкретний досвід, який щойно пройшла. Це і є база для позиціонування і нової ціни
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <p class="text-small opacity-60 mb-2">Week 4 · 23–29 червня</p>
+                    <h3 class="text-h2 font-editorial mb-6">Упаковка кейсу</h3>
+                    <ul class="list-none text-body space-y-3 mb-6">
+                        <li>— Шаблони структури кейсу у Figma — щоб не починати з нуля</li>
+                        <li>— Оформлення і публікація кейсу в Instagram</li>
+                        <li>— За бажанням — підкоригуєш лого перед публікацією</li>
+                        <li>— Дедлайн публікації: п'ятниця 28 червня</li>
+                        <li>— Завершальний Zoom-воркшоп 29 червня <span class="inline-block border border-primary px-2 py-0.5 text-[11px] uppercase tracking-wider ml-2">групове</span>:<br>
+                            · Брейншторм — що робити в складних ситуаціях з клієнтом<br>
+                            · Шерінг вражень від практикуму
+                        </li>
+                    </ul>
+                    <div class="bg-accent p-4 border border-primary text-body mt-4">
+                        <span class="font-bold">Результат:</span> Опублікований кейс — перший публічний прояв того рівня, на який ти вийшла
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary text-page py-20 px-4 sm:px-6 lg:px-8 text-center border-y border-page border-opacity-20">
+        <div class="max-w-3xl mx-auto fade-up">
+            <div class="text-h3 md:text-[32px] font-editorial mb-8 leading-snug">
+                <p>8 500 грн — до 19.05</p>
+                <p>11 500 грн — після</p>
+            </div>
+            <p class="text-body mb-8 opacity-80">Розтермінування на довірі — 2 платежі без %<br>Старт 28.05 · 4 тижні · до 10 осіб · один тариф</p>
+            <a href="https://t.me/valeriia_kravtsova_business" class="btn btn-inverted w-full md:w-auto text-lg">Забронювати місце →</a>
+        </div>
+    </section>
+
+    <section id="tsina" class="bg-surface py-20 md:py-32 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto fade-up">
+            <h2 class="text-h2 font-editorial mb-16">Що ти отримуєш</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 mb-20">
+                <div>
+                    <h3 class="text-h3 font-bold mb-4">Матеріали</h3>
+                    <ul class="text-body space-y-2 opacity-90">
+                        <li>— 5 відео-уроків у записі — залишаються після закінчення</li>
+                        <li>— 6 бонусів — з'являються в потрібний момент, не всі одразу</li>
+                        <li>— Робочий шаблон візуальної сесії з реальних проєктів</li>
+                        <li>— Підбірка інструментів для підготовки до сесії</li>
+                        <li>— Figma-шаблони для оформлення кейсу</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-h3 font-bold mb-4">Групова робота</h3>
+                    <ul class="text-body space-y-2 opacity-90">
+                        <li>— Zoom-знайомство (28.05) і Завершальний Zoom-воркшоп (29.06) — групові, з Валерією</li>
+                        <li>— 2 живих зустрічі з клієнтом: візуальна сесія і презентація концепту</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-h3 font-bold mb-4">Фідбек і підтримка</h3>
+                    <ul class="text-body space-y-2 opacity-90">
+                        <li>— Індивідуальний фідбек від авторки по сесії і по сильних проявах</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-h3 font-bold mb-4">Додатково</h3>
+                    <ul class="text-body space-y-2 opacity-90">
+                        <li>— Закритий ТГ-канал групи на весь час практикуму</li>
+                        <li>— Сертифікат для тих, хто виконав всі задачі</li>
+                        <li>— Розіграш між тими, хто опублікував кейс вчасно</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-page border border-primary p-8 md:p-12 text-center max-w-3xl mx-auto">
+                <div class="text-h2 font-editorial mb-6">
+                    8 500 грн — до 19.05<br>
+                    <span class="opacity-60 text-h3">11 500 грн — після</span>
+                </div>
+                <p class="text-body mb-8 font-medium">Розтермінування на довірі — 2 платежі без %<br>До 10 осіб · Старт 28.05</p>
+                <a href="https://t.me/valeriia_kravtsova_business" class="btn btn-primary w-full md:w-auto text-lg">Забронювати місце →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-page py-20 md:py-32 px-4 sm:px-6 lg:px-8 border-t border-primary">
+        <div class="max-w-6xl mx-auto fade-up">
+            <h2 class="text-h2 font-editorial mb-16">Хто веде</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div class="order-1 md:order-1 flex flex-col gap-6">
+                    <div class="w-full aspect-[3/4] bg-surface border border-primary flex items-center justify-center text-primary opacity-50">
+                        [Photo of Valeriia]
+                    </div>
+                </div>
+                
+                <div class="order-2 md:order-2 flex flex-col justify-center">
+                    <h3 class="text-[40px] md:text-[56px] font-editorial mb-8 leading-none">Валерія Кравцова</h3>
+                    <ul class="text-body space-y-3 mb-8 opacity-90">
+                        <li>— 5 років в графічному дизайні — логотипи, айдентика, брендинг</li>
+                        <li>— Серед клієнтів: Boosta (MasterBundles), Incrypted, Tufi, Ukrainian Beauty Forum, Morris Digital, Юлія Козачкова та інші</li>
+                        <li>— 1 рік в коучингу — самореалізація, особиста стратегія</li>
+                        <li>— Спікер Креативної Практики — 100 000+ студентів на платформі</li>
+                        <li>— Працювала фулл-тайм, парт-тайм і на фрілансі</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="bg-surface py-20 md:py-32 px-4 sm:px-6 lg:px-8 border-y border-primary">
+        <div class="max-w-3xl mx-auto fade-up">
+            <h2 class="text-h2 font-editorial mb-12">Питання, які виникають</h2>
+            
+            <div class="space-y-4">
+                <div class="border-b border-primary border-opacity-20">
+                    <button class="w-full text-left py-6 flex justify-between items-center focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="text-h3 font-medium pr-8">Чи підійде, якщо в мене мало досвіду?</span>
+                        <span class="text-2xl font-light transform transition-transform duration-200">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="pb-6 text-body opacity-80">Практикум для тих, хто вже мав хоча б кількох реальних клієнтів. Якщо тільки після курсів — напиши, розберемось разом.</p>
+                    </div>
+                </div>
+                <div class="border-b border-primary border-opacity-20">
+                    <button class="w-full text-left py-6 flex justify-between items-center focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="text-h3 font-medium pr-8">Чи встигну, якщо в мене зараз є проєкти?</span>
+                        <span class="text-2xl font-light transform transition-transform duration-200">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="pb-6 text-body opacity-80">Відео в записі — дивишся коли зручно. Живі зустрічі з клієнтом плануєте самостійно.</p>
+                    </div>
+                </div>
+                <div class="border-b border-primary border-opacity-20">
+                    <button class="w-full text-left py-6 flex justify-between items-center focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="text-h3 font-medium pr-8">Чому до 10 осіб?</span>
+                        <span class="text-2xl font-light transform transition-transform duration-200">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="pb-6 text-body opacity-80">Бо фідбек персональний. Бо симуляція має сенс тільки в маленькій групі. Бо це не курс у записі на 200 людей.</p>
+                    </div>
+                </div>
+                <div class="border-b border-primary border-opacity-20">
+                    <button class="w-full text-left py-6 flex justify-between items-center focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="text-h3 font-medium pr-8">Що якщо я пропущу груповий Zoom?</span>
+                        <span class="text-2xl font-light transform transition-transform duration-200">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="pb-6 text-body opacity-80">Обидва Zoom — в записі. Живі зустрічі з партнеркою плануєте самі.</p>
+                    </div>
+                </div>
+                <div class="border-b border-primary border-opacity-20">
+                    <button class="w-full text-left py-6 flex justify-between items-center focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="text-h3 font-medium pr-8">Буде наступна група?</span>
+                        <span class="text-2xl font-light transform transition-transform duration-200">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="pb-6 text-body opacity-80">Можливо. Але ціна першої групи нижча. Склад фіксований — якщо 10 місць закриті, закриті.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary text-page py-24 px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-3xl mx-auto fade-up">
+            <a href="https://t.me/valeriia_kravtsova_business" class="btn btn-inverted w-full md:w-auto text-lg mb-6">Забронювати місце →</a>
+            <p class="text-small opacity-70">Є питання — напиши в DM.<br>Telegram: @valeriia_kravtsova_business</p>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-page pt-12 pb-8 px-4 sm:px-6 lg:px-8 border-t border-page border-opacity-20 text-center">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-body font-medium">Практикум для фрілансерів · лого і айдентика</p>
+            <div class="flex space-x-6 text-page">
+                <a href="#" class="hover:opacity-70 transition-opacity">Instagram</a>
+                <a href="https://t.me/valeriia_kravtsova_business" class="hover:opacity-70 transition-opacity">Telegram</a>
+            </div>
+            <p class="text-small opacity-60">© Валерія Кравцова, 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        function toggleAccordion(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('span:last-child');
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.style.transform = 'rotate(45deg)';
+            }
+        }
+
+        // Sticky Nav Shadow on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Fade Up Animation on Scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
