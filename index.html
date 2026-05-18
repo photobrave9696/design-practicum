@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>The Praktykum — фрілансеркам, які створюють лого</title>
 
+<!-- Favicon -->
+<link rel="icon" href="favicon/favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon/favicon-96x96.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+
 <!-- SEO -->
 <meta name="description" content="За 4,5 тижні — перевірена система ведення дизайн-проєктів, яка мінімізує правки і допомагає називати ціну, яку хочеш. Старт 28 травня 2026. 10 місць.">
 <meta name="keywords" content="практикум дизайн, лого дизайн курс, айдентика фріланс, підняти ціну дизайнеру, дизайн-практикум Україна">
@@ -177,6 +183,12 @@ body{
   display:flex;flex-direction:column;gap:72px;
 }
 
+.visual-session img {
+  width: 100%;
+  object-fit: contain;
+  height: auto;
+}
+
 /* ─────────────── GLOSSY PILL BUTTONS — ref image 4, salad green ─────────────── */
 /*
   Aqua-glass pill: gradient surface (light→darker), glossy top highlight,
@@ -302,20 +314,6 @@ body{
   padding:4px 9px;background:var(--ink);color:var(--lime);
   border-radius:999px;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
 }
-.portraits{display:flex;margin-top:10px}
-.portrait{
-  width:22px;height:22px;border-radius:50%;margin-right:-7px;
-  border:2px solid rgba(255,255,255,.88);box-shadow:0 1px 4px rgba(0,0,0,.1);
-  position:relative;overflow:hidden;background:#e0cfc0;
-}
-.portrait::after{
-  content:'';position:absolute;top:22%;left:50%;transform:translateX(-50%);
-  width:58%;height:40%;border-radius:50% 50% 35% 35%/60% 60% 40% 40%;background:#3a2414;
-}
-.p1{background:linear-gradient(155deg,#ffd4b0,#e88b5a)}.p1::after{background:#1a0e08}
-.p2{background:linear-gradient(155deg,#ffe0c0,#b58060)}.p2::after{background:#3a2414}
-.pm{background:rgba(0,0,0,.12)}.pm::after{background:rgba(0,0,0,.28)}
-
 /* skill bars */
 .sbars{display:flex;flex-direction:column;gap:9px;margin-top:8px}
 .sbar-row{display:flex;align-items:center;gap:8px;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-60)}
@@ -357,7 +355,6 @@ body{
 /* ─────────────── REVIEWS ─────────────── */
 .review-placeholder{
   border-radius:var(--r-card);overflow:hidden;
-  aspect-ratio:16/7;
   background:linear-gradient(135deg,#f0e8ff 0%,#ffe0f4 40%,#fff0dc 70%,#e8f5ff 100%);
   display:flex;align-items:center;justify-content:center;
   position:relative;margin-bottom:20px;
@@ -380,16 +377,9 @@ body{
 .rev-head{display:flex;align-items:center;gap:12px;margin-bottom:13px}
 .rev-ava{
   width:38px;height:38px;border-radius:50%;
-  border:1.5px solid rgba(0,0,0,.08);position:relative;overflow:hidden;flex-shrink:0;
-  background:linear-gradient(155deg,#ffd9b3,#c87a3a);
+  border:1.5px solid rgba(0,0,0,.08);flex-shrink:0;
+  object-fit:cover;display:block;
 }
-.rev-ava::after{
-  content:'';position:absolute;top:22%;left:50%;transform:translateX(-50%);
-  width:60%;height:42%;border-radius:50% 50% 35% 35%/60% 60% 40% 40%;background:#2a1505;
-}
-.rev-ava.a2{background:linear-gradient(155deg,#ffe0c0,#b58060)}
-.rev-ava.a3{background:linear-gradient(155deg,#ffd4b0,#d88040)}.rev-ava.a3::after{background:#6a4020}
-.rev-ava.a4{background:linear-gradient(155deg,#fff0dc,#d4a070)}.rev-ava.a4::after{background:#d4a868}
 .rev-name{font-family:'Inter Tight',sans-serif;font-size:13.5px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
 .rev-role{font-size:11px;color:var(--ink-36);margin-top:2px}
 .rev-text{font-size:13.5px;line-height:1.58;color:var(--ink);font-weight:400;letter-spacing:-.003em}
@@ -515,12 +505,8 @@ body{
 .msg-sender{display:flex;align-items:center;gap:13px;padding:18px 24px 14px}
 .msg-ava{
   width:42px;height:42px;border-radius:50%;
-  background:linear-gradient(155deg,#ffd9b3,#c87a3a);
-  border:1.5px solid rgba(0,0,0,.07);position:relative;overflow:hidden;flex-shrink:0;
-}
-.msg-ava::after{
-  content:'';position:absolute;top:22%;left:50%;transform:translateX(-50%);
-  width:60%;height:42%;border-radius:50% 50% 35% 35%/60% 60% 40% 40%;background:#2a1505;
+  border:1.5px solid rgba(0,0,0,.07);flex-shrink:0;
+  object-fit:cover;display:block;
 }
 .msg-sname{font-family:'Inter Tight',sans-serif;font-weight:700;font-size:15px;letter-spacing:-.015em}
 .msg-smeta{font-size:12px;color:var(--ink-36);margin-top:2px}
@@ -643,13 +629,11 @@ body{
 .author-photo{
   width:100%;max-width:230px;aspect-ratio:1;margin:0 auto;
   border-radius:20px;
-  background:linear-gradient(155deg,#ffd9b3 0%,#c87a3a 100%);
   border:.5px solid rgba(0,0,0,.08);
-  display:grid;place-items:center;position:relative;overflow:hidden;
+  overflow:hidden;
 }
-.author-photo::after{
-  content:'';position:absolute;top:25%;left:50%;transform:translateX(-50%);
-  width:55%;height:35%;border-radius:50% 50% 35% 35%/60% 60% 40% 40%;background:#2a1505;
+.author-photo img{
+  width:100%;height:100%;object-fit:cover;display:block;
 }
 .photo-pill{
   position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
@@ -810,6 +794,7 @@ body{
 </svg>
 
 <!-- FLOATING PILL NAV -->
+<header>
 <nav class="nav">
   <div class="nav-pill">
     <a class="nav-link" href="#program">Програма</a>
@@ -818,6 +803,7 @@ body{
     <a class="nav-link" href="#author">Авторка</a>
   </div>
 </nav>
+</header>
 
 <div class="app">
 
@@ -856,11 +842,6 @@ body{
       <div class="sc-top"><span class="slabel" style="margin-bottom:0">GROUP</span></div>
       <div style="display:flex;align-items:baseline;gap:5px;margin-top:10px">
         <span class="snum">10</span><span class="scap">/ місць</span>
-      </div>
-      <div class="portraits">
-        <div class="portrait p1"></div><div class="portrait p2"></div>
-        <div class="portrait pm"></div><div class="portrait pm"></div>
-        <div class="portrait pm"></div><div class="portrait pm"></div>
       </div>
     </div>
     <div class="glass sc">
@@ -953,9 +934,8 @@ body{
     <h2 class="stitle">New level твого<br/><em>дизайн-персонажу</em></h2>
   </div>
 
-  <!-- Placeholder image -->
   <div class="review-placeholder">
-    <img href="https://photobrave9696.github.io/design-practicum/assets/img_2.png" width="2004" height="2142" alt="Дизайнерка, фрілансерка"/>
+    <img src="assets/img_1.jpg" width="1160" height="543" alt="Дизайнерка, фрілансерка" loading="lazy"/>
   </div>
 
   <!-- Review carousel -->
@@ -965,8 +945,8 @@ body{
         <div class="carousel-item">
           <div class="glass review">
             <div class="rev-head">
-              <div class="rev-ava"></div>
-              <div><div class="rev-name">Клієнтка сесії</div><div class="rev-role">після стратегічної сесії</div></div>
+              <img class="rev-ava" src="assets/review_1.jpg" alt="" loading="lazy"/>
+              <div><div class="rev-name">Андрій</div><div class="rev-role">бренд-дизайнер</div></div>
             </div>
             <p class="rev-text">Лєра, неймовірно тобі вдячна за проведену сесію! Дуже сподобалося, що ти попередньо добряче пройнялась контекстом мого запиту, завдяки чому наша взаємодія пройшла максимально продуктивно 🔥<br/><br/>Дякую за те, що підсвітила мої сильні сторони. Ти <b>супер приємна співрозмовниця, уважна до деталей</b>, дуже старанно відчуваєш! Карочє, пощастить людям в тебе на сесіях!</p>
           </div>
@@ -974,28 +954,28 @@ body{
         <div class="carousel-item">
           <div class="glass review">
             <div class="rev-head">
-              <div class="rev-ava a2"></div>
-              <div><div class="rev-name">Контент-мейкерка</div><div class="rev-role">після зідзвону</div></div>
+              <img class="rev-ava" src="assets/review_2.jpg" alt="" loading="lazy"/>
+              <div><div class="rev-name">Аліна</div><div class="rev-role">графічна дизайнерка</div></div>
             </div>
-            <p class="rev-text">Було дууууже комфортно спілкуватись з тобою. Мені сподобалось, що ти була максимально залучена та зацікавлена дійсно дати користь.<br/><br/>Підсумовуючи: <b>ти свій головний проєкт</b>. І себе треба також ставити в плани на день. Тому дуже дякую за розмову 🥰</p>
+            <p class="rev-text">Дуже класна ініціатива і це було дуже цінно для мене, особливо хочу відмітити що було комфортно і лайтово в спілкуванні, хоча зазвичай мені важко даються зідзвони з новими людьми, але залишились тільки хороші емоції✨Тому дуже дякуюююю🫶</p>
           </div>
         </div>
         <div class="carousel-item">
           <div class="glass review">
             <div class="rev-head">
-              <div class="rev-ava a3"></div>
-              <div><div class="rev-name">Експертка</div><div class="rev-role">після стратегічної сесії</div></div>
+              <img class="rev-ava" src="assets/review_3.jpg" alt="" loading="lazy"/>
+              <div><div class="rev-name">Олена</div><div class="rev-role">дизайнерка та психолог</div></div>
             </div>
-            <p class="rev-text">Це були <b>дуже сильні 30 хвилин</b>, які допомогли підсвітити певні моменти, на які варто звернути увагу.<br/><br/>Ти як експерт просто ВАУ! Всі моменти, які ти допомогла розкрити, мені точно допоможуть. Ще раз тобі дякую 👏🔥</p>
+            <p class="rev-text">Навіть невелика кількість часу для нашого діалогу дала мені дууууже багато користі! Ти дала мені погляд зі сторони на мою проблему (яку, як я думала, неможливо вирішити та вирватись з цього, бо вона ж така унікальна і ніхто мені в цьому не зможе допомогти). Ти витягнула з мене план по зміні ситуації, мої власні упередження, які заважають мені вирішити мій запит. З тобою дуже комфортно, як з професійної точки зору так і просто з людської. Видно, що ти включена, тобі дійсно цікаво, щоб людина навпроти отримала для себе щось корисне. Ти дуже тонко підмічаєш якісь мовленнєві обороти, жести, міміку, які також багато про що говорять. Короче, в мене тільки позитивні емоції від взаємодії з тобою! Ще раз щиро тобі дякую ❤️</p>
           </div>
         </div>
         <div class="carousel-item">
           <div class="glass review">
             <div class="rev-head">
-              <div class="rev-ava a4"></div>
-              <div><div class="rev-name">Підприємиця</div><div class="rev-role">після діалогу</div></div>
+              <img class="rev-ava" src="assets/review_4.jpg" alt="" loading="lazy"/>
+              <div><div class="rev-name">Кирило</div><div class="rev-role">графічний дизайнер</div></div>
             </div>
-            <p class="rev-text">Навіть невелика кількість часу дала мені дууууже багато користі! Ти дала мені <b>погляд зі сторони</b> на мою проблему. З тобою дуже комфортно — видно, що ти включена і дійсно цікавишся результатом. Тільки позитивні емоції! ❤️</p>
+            <p class="rev-text">Це були дуже сильні 30 хвилин, які допомогли підсвітити певні моменти на які варто звернути увагу та задуматись над ними. Ти як експерт просто ВАУ! Всі моменти які ти допомогла розкрити, я думаю мені точно допоможуть, ще раз тобі дякую!🫂💫🔥</p>
           </div>
         </div>
       </div>
@@ -1057,7 +1037,7 @@ body{
     <div class="msg-top">✉ ПОВІДОМЛЕННЯ ВІД АВТОРКИ</div>
     <div class="msg-hr"></div>
     <div class="msg-sender">
-      <div class="msg-ava"></div>
+      <img class="msg-ava" src="assets/author.jpg" alt="Лєра Кравцова" loading="lazy"/>
       <div>
         <div class="msg-sname">Лєра Кравцова</div>
         <div class="msg-smeta">авторка · 5 років в дизайні</div>
@@ -1167,6 +1147,10 @@ body{
   </div>
 </section>
 
+<div class="visual-session reveal">
+<img src="assets/img_3.png" width="1160" height="630" alt="Візуальна сесія" loading="lazy"/>
+</div>
+
 <!-- ── MATERIALS + PRICING ── -->
 <section class="reveal" id="pricing">
   <div style="margin-bottom:22px">
@@ -1193,7 +1177,7 @@ body{
       <div class="installment">
         <div class="inst-title">Розтермінування на довірі — 2 платежі без %</div>
       </div>
-      <a class="btn btn-lime btn-lg btn-full" href="#">
+      <a class="btn btn-lime btn-lg btn-full"  href="https://t.me/valeriia_kravtsova_business" target="_blank" rel="noopener">
         Забронювати з чіт-кодом до 22.05
         <svg width="11" height="11"><use href="#ic-arrow"/></svg>
       </a>
@@ -1210,7 +1194,7 @@ body{
   <div class="glass author-grid">
     <div>
       <div class="author-photo">
-        <div class="photo-pill">PHOTO · PLACEHOLDER</div>
+        <img src="assets/author.jpg" alt="Лєра Кравцова" loading="lazy"/>
       </div>
     </div>
     <div>
@@ -1255,9 +1239,9 @@ body{
   <p class="footer-links">
     <a href="https://www.instagram.com/valeriia__kravtsova/" target="_blank" rel="noopener">Instagram</a>
     <span class="footer-sep">·</span>
-    <a href="#">Оферта</a>
+    <a href="https://docs.google.com/document/d/195mMULbLN9LZPw-4gYth9g5bGyb_MESuPu2OQ-JbMfE/edit?usp=sharing">Оферта</a>
     <span class="footer-sep">·</span>
-    <a href="#">Конфіденційність</a>
+    <a href="https://docs.google.com/document/d/1BRaOz8h8FaqOMxWUPvKlZA5L0WO1_OKS6F5Cug8Wvb4/edit?usp=sharing">Конфіденційність</a>
   </p>
 </footer>
 
